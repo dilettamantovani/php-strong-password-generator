@@ -1,20 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <title>Password Generator</title>
+    <title>PW</title>
 </head>
+
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <h1>PW Gen</h1>
-                <?php $_GET["pwd-length"] ?>
-                <a href="form.php"><button class="btn-primary">Back</button></a>
-            </div>
-        </div>
-    </div>
+    <?php $number = ($_GET["number"]); ?>
+    <?php $min = "1"; ?>
+    <?php $max = $number; ?>
+    <?php if ($number == intval($number, $base = 10)) {
+        echo '<span>' . $number . '</span>';
+    } else echo '<h1>' . "Insert a number" . '</h1>'; ?>
+    <?php if ($number > 0 && $number) {
+        $password = str_shuffle($number);
+        echo '<h2>' . "Your password is:" . '</h2>' . '<h2>' . $password . '</h2>';
+    } elseif (isset($_GET["lettere"])) {
+        $letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        $password = $password . str_shuffle($letters);
+        var_dump($letters);
+    }; ?>
+
 </body>
+
 </html>

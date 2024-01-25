@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <title>Password Generator</title>
+    <title>Form</title>
 </head>
-<body>
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <h1>PW Gen</h1>
-                <form>
-                    <label for="pwd_length"></label>
-                    <input id="pwd_length" name="pwd_length" type="number" placeholder="Lunghezza">
-                    <button type="submit" href="#" class="btn-primary">Generate PW</button>
-                </form>
-            </div>
-        </div>
+
+<body class="bg-primary d-flex align-center flex-column">
+    <h1>STRONG PASSWORD GENERATOR</h1>
+    <div>
+        <form action="password.php" method="get">
+            <span>PW length: </span>
+            <input type="text" placeholder="inserire un numero" name="number">
+            <input type="checkbox" id="numbers" name="numeri" value="0">
+            <label for="numbers">Numbers</label><br>
+            <input type="checkbox" id="letters" name="lettere" value="1">
+            <label for="letters">Letters</label><br>
+            <input type="checkbox" id="symbols" name="simboli" value="2">
+            <label for="symbols">Symbols</label><br><br>
+            <button>Generate PW</button>
+        </form>
     </div>
 </body>
+
 </html>
